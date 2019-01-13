@@ -10,6 +10,12 @@ spring:
   profiles: dev
   application:
     name: dev
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7001/eureka
+
 ---
 server:
   port: 8082
@@ -18,3 +24,8 @@ spring:
   profiles: test
   application:
     name: test
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7002/eureka
