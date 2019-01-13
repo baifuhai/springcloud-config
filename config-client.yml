@@ -1,0 +1,31 @@
+spring:
+  profiles:
+    active:
+      - dev
+---
+server:
+  port: 8081
+
+spring:
+  profiles: dev
+  application:
+    name: config-client
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7001/eureka
+
+---
+server:
+  port: 8082
+
+spring:
+  profiles: test
+  application:
+    name: config-client
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7002/eureka
